@@ -115,7 +115,7 @@ if uploaded_file is not None and uploaded_factors is not None:
         output = BytesIO()
         writer = pd.ExcelWriter(output, engine='xlsxwriter')
         df.to_excel(writer, index=False, sheet_name='Sheet1')
-        writer.save()
+        writer._save()
         processed_data = output.getvalue()
         return processed_data
 
